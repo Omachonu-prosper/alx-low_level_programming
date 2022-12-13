@@ -13,18 +13,18 @@ void jack_bauer(void)
 		{
 			for (k = 0, n3 = 48; k < 6; k++, n3++)
 			{
-			       for (l = 0, n4 = 48; l < 10; l++, n4++)
-			       {
-				       _putchar(n1);
-				       _putchar(n2);
-				       _putchar(':');
-				       _putchar(n3);
-				       _putchar(n4);
-				       _putchar('\n');
+				for (l = 0, n4 = 48; l < 10; l++, n4++)
+				{
+					_putchar(n1);
+					_putchar(n2);
+					_putchar(':');
+					_putchar(n3);
+					_putchar(n4);
+					_putchar('\n');
 
-				       if (i == 2 && j == 3 && k == 5 && l == 9)
-					       return;
-			       }
+					if (i == 2 && j == 3 && k == 5 && l == 9)
+						return;
+				}
 			}
 		}
 	}
