@@ -34,7 +34,12 @@ void fizz_buzz(void)
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+
+			if (i != 100)
+			{
+				printf(" ");
+			}
 		}
 		else
 		{
