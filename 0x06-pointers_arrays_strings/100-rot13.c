@@ -35,7 +35,6 @@ char *rot13(char *str)
 		{
 			if (str[i] == letters[j])
 			{
-				putchar(str[i]);
 				str[i] = encoding[j];
 				break;
 			}
