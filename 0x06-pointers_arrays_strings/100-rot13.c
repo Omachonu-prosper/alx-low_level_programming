@@ -1,29 +1,44 @@
 #include "main.h"
-#include <ctype.h>
+#include <stdio.h>
 
 /**
- * rot13 - Encodes a string using rot 13
- * @str: The string to encode
+ * rot13 - Encodes a string using rot13 encoding
+ * @str: The string to be encoded
  *
- * Return: Pointer to the encoded string
+ * Return: Pointer to the string
  */
 char *rot13(char *str)
 {
-	int i;
+	char letters[] = {
+		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+		'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+		'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+		'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F',
+		'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+		'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+		'W', 'X', 'Y', 'Z'
+	};
+	char encoding[] = {
+		'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+		'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c',
+		'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+		'l', 'm', 'N', 'O', 'P', 'Q', 'R', 'S',
+		'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A',
+		'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+		'J', 'K', 'L', 'M'
+	};
+	int i, j;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((isupper(str[i]) && str[i] + 13 <= 90)
-				||
-				(islower(str[i]) && str[i] + 13 <= 122))
+		for (j = 0; j < 52; j++)
 		{
-			str[i] = (char) ((int) str[i] + 13);
-		}
-		else if ((isupper(str[i]) && str[i] + 13 > 90)
-				||
-				(islower(str[i]) && str[i] + 13 > 122))
-		{
-			str[i] = (char) ((int) str[i] - 13);
+			if (str[i] == letters[j])
+			{
+				putchar(str[i]);
+				str[i] = encoding[j];
+				break;
+			}
 		}
 	}
 
