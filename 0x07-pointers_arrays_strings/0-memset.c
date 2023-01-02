@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * memset - Fill memory with a constant byte
+ * _memset - Fill memory with a constant byte
  * @s: The pointer to the byte to be filled
  * @b: The constant byte to be filled with
  * @n: The size of the byte in s to fill
