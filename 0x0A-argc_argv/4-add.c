@@ -10,22 +10,22 @@
  * Return: 1 if an arguement passed is not a digit
  * 0 if no errors occur
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int i;
 	int total = 0;
-	
-	printf("Just before the for loop\n");
+
 	for (i = 1; i < argc; i++)
 	{
-		printf("Just before if statement\n");
-		if (!isdigit(argv[i]))
+		if (isdigit(*argv[i]) != 0)
+		{
+			total += atoi(argv[i]);
+		}
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-
-		total += atoi(argv[i]);
 	}
 
 	printf("%d\n", total);
