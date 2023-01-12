@@ -22,6 +22,8 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
+		arg_str_len += 1;
+
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
 			arg_str_len += 1;
