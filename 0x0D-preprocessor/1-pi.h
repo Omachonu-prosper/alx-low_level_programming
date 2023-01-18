@@ -1,3 +1,4 @@
-#ifndef PI
-#define PI 3.1415926359
+#ifndef PI_MACRO
+#define PI_MACRO
+#define PI 3.14159265359
 #endif
