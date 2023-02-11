@@ -56,7 +56,7 @@ void copy_contents(const char *file_from, const char *file_to)
 		exit(98);
 	}
 
-	rd = read(fd_from, buffer, 1024);
+	rd = read(fd_from, buffer, 2048);
 	if (rd < 0)
 	{
 		dprintf(2, "Error: Can't read from %s\n", file_from);
@@ -70,7 +70,7 @@ void copy_contents(const char *file_from, const char *file_to)
 		exit(99);
 	}
 
-	wr = write(fd_to, buffer, 1024);
+	wr = write(fd_to, buffer, 2048);
 	if (wr < 0)
 	{
 		dprintf(2, "Error: Can't write to %s\n", file_to);
